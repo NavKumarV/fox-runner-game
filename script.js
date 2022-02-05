@@ -20,6 +20,9 @@ window.addEventListener('load', () => {
                     this.keys.indexOf(e.key) == -1) {
                     this.keys.push(e.key);
                 }
+                if(gameOver && e.key==='Enter'){
+                    location.reload();
+                }
             })
 
             window.addEventListener('keyup', (e) => {
@@ -247,10 +250,10 @@ window.addEventListener('load', () => {
         if(gameOver){
             context.textAlign = 'center';
             context.fillStyle = 'black';
-            context.fillText('Game Over, try again!', canvas.width/2, 200);
+            context.fillText('Game Over, Press "Enter" to try again!', canvas.width/2, 200);
 
             context.fillStyle = 'white';
-            context.fillText('Game Over, try again!', canvas.width/2+2, 200);
+            context.fillText('Game Over, Press "Enter" to try again!', canvas.width/2+2, 200);
         }
     }
 
